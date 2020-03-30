@@ -578,6 +578,10 @@ PRODUCT_COPY_FILES += \
 # PowerHint values
 PRODUCT_COPY_FILES += \
     device/essential/mata/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
+    
+# Gapps
+GAPPS_VARIANT := pico
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
 
 # Installs gsi keys into ramdisk, to boot a GSI with verified boot.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
